@@ -12,20 +12,12 @@ import java.util.Optional;
 @Service
 public class UserService {
 
-        @Autowired
-        UserRepository userRepository;
-
-    static List<User> list = new ArrayList<>();
-    static {
-
-        list.add(new User("sayali","Pune"));
-        list.add(new User("adam","france"));
-        list.add(new User("John","Goa"));
-    }
+    @Autowired
+    UserRepository userRepository;
 
     public  List<User> getAllUsers(){
 
-        return list;
+        return userRepository.findAll();
     }
     
     public Optional<User> getUser(int id) {
