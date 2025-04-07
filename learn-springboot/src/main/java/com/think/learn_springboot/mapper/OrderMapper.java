@@ -6,7 +6,6 @@ import com.think.learn_springboot.entity.Order;
 import org.springframework.stereotype.Component;
 
 @Component
-
 public class OrderMapper {
 
     public Order toEntity(OrderRequestDTO dto) {
@@ -27,5 +26,4 @@ public class OrderMapper {
         dto.setPrice(order.getPrice());
         return dto;
     }
-
 }

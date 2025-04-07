@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class DeliveryController {
 
     private final DeliveryService deliveryService;
@@ -23,7 +25,7 @@ public class DeliveryController {
         this.deliveryMapper = deliveryMapper;
     }
 
-    @PatchMapping
+    @PatchMapping("/deliveries/schedule")
     public ResponseEntity<DeliveryResponseDTO> scheduleDelivery(@Valid @RequestBody DeliveryRequestDTO requestDTO) throws ResourceNotFoundException {
         Delivery delivery = deliveryMapper.toEntity(requestDTO);
         Delivery savedDelivery = deliveryService.scheduleDelivery(delivery);

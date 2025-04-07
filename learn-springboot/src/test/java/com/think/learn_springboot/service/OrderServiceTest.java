@@ -39,7 +39,6 @@ class OrderServiceTest {
 
         Order savedOrder = orderService.createOrder(inputOrder);
 
-        // Assert
         assertNotNull(savedOrder);
         assertEquals(1L, savedOrder.getOrderId());
         assertEquals("P123", savedOrder.getProductId());

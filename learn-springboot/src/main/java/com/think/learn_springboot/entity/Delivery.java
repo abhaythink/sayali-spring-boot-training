@@ -26,6 +26,4 @@ public class Delivery {
 
     @Enumerated(EnumType.STRING)
     private DeliveryStatus deliveryStatus = DeliveryStatus.SCHEDULED;
-
-
 }

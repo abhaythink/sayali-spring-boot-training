@@ -14,7 +14,7 @@ public class DeliveryMapper {
         delivery.setOrderId(dto.getOrderId());
         delivery.setProductId(dto.getProductId());
         delivery.setDeliveryDate(dto.getDeliveryDate());
-        delivery.setDeliveryStatus(DeliveryStatus.SCHEDULED); // default status
+        delivery.setDeliveryStatus(DeliveryStatus.SCHEDULED);
         return delivery;
     }
 
