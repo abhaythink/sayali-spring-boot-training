@@ -11,25 +11,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/api")
 public class DeliveryController {
 
     private final DeliveryService deliveryService;
-    private final DeliveryMapper deliveryMapper;
 
     @Autowired
     public DeliveryController(DeliveryService deliveryService, DeliveryMapper deliveryMapper) {
         this.deliveryService = deliveryService;
-        this.deliveryMapper = deliveryMapper;
     }
 
-    @PatchMapping("/deliveries/schedule")
-    public ResponseEntity<DeliveryResponseDTO> scheduleDelivery(@Valid @RequestBody DeliveryRequestDTO requestDTO) throws ResourceNotFoundException {
-        Delivery delivery = deliveryMapper.toEntity(requestDTO);
-        Delivery savedDelivery = deliveryService.scheduleDelivery(delivery);
-        DeliveryResponseDTO responseDTO = deliveryMapper.toResponseDTO(savedDelivery);
-        return ResponseEntity.ok(responseDTO);
-    }
 }

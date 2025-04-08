@@ -17,6 +17,4 @@ public class DeliveryResponseDTO {
     private LocalDate deliveryDate;
     private DeliveryStatus deliveryStatus;
 
-    public void setOrderId(Long orderId) {
-    }
 }

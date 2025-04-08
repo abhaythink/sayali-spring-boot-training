@@ -1,5 +1,6 @@
 package com.think.learn_springboot.dto;
 
+import jakarta.validation.constraints.Future;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +15,7 @@ import java.time.LocalDate;
 public class DeliveryRequestDTO {
     private Long orderId;
     private String productId;
+    @Future
     private LocalDate deliveryDate;
 
 }
